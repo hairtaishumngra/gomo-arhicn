@@ -1,0 +1,605 @@
+:root{
+  --bg:#fff8f3;
+  --card:#ffffff;
+  --warm:#ff8c42;
+  --warm2:#ffb366;
+  --warm-dark:#e67e22;
+  --accent:#ffa500;
+  --coral:#ff7f50;
+  --text:#3d2817;
+  --muted:#8b7355;
+  --light:#fff9f5;
+  --shadow: 0 20px 60px rgba(255,140,66,.12);
+  --shadow-sm: 0 4px 15px rgba(0,0,0,.05);
+  --radius: 24px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:var(--text);
+  background: linear-gradient(135deg, #fff8f3 0%, #ffe6cc 50%, #fff5f0 100%);
+  min-height:100vh;
+  position:relative;
+}
+
+.bg-hearts{
+  position:fixed; inset:0;
+  pointer-events:none;
+  opacity:.12;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,140,66,.4) 0 12px, transparent 13px),
+    radial-gradient(circle at 80% 30%, rgba(255,179,102,.4) 0 14px, transparent 15px),
+    radial-gradient(circle at 30% 70%, rgba(255,140,66,.3) 0 11px, transparent 12px),
+    radial-gradient(circle at 70% 80%, rgba(255,179,102,.3) 0 10px, transparent 11px);
+  filter: blur(.5px);
+}
+
+.container{
+  width:min(920px, 92vw);
+  margin: 0 auto 70px;
+}
+
+.hero{
+  padding: 44px 0 18px;
+}
+.card{
+  background:var(--card);
+  border:1.5px solid rgba(255,140,66,.08);
+  box-shadow:var(--shadow);
+  border-radius:var(--radius);
+  backdrop-filter: blur(10px);
+  padding: 32px 28px;
+  transition: all 0.3s ease;
+}
+
+.card:hover{
+  border-color: rgba(255,140,66,.15);
+  box-shadow: 0 30px 80px rgba(255,140,66,.15);
+}
+
+.hero-card{width:min(620px, 94vw); margin: 0 auto}
+.hero-card h1{
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(40px, 5.2vw, 64px);
+  margin: 12px 0 8px;
+  line-height:1.1;
+  background: linear-gradient(135deg, var(--warm-dark), var(--warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight:700;
+}
+.sub{margin:0; color:var(--muted); font-size: 15px}
+
+.badge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,140,66,.1), rgba(255,179,102,.1));
+  border:1.5px solid rgba(255,140,66,.2);
+  font-weight:600;
+  margin:0;
+  font-size:14px;
+  color:var(--warm-dark);
+  backdrop-filter: blur(10px);
+}
+
+.section{padding: 20px 0}
+.section h2{
+  margin:0 0 14px;
+  font-size: 24px;
+  font-weight:700;
+  color:var(--text);
+}
+.muted{color:var(--muted)}
+.tiny{font-size:12px}
+
+.countdown-wrap{margin-top:16px}
+.countdown-label{margin:0 0 8px; font-weight:600}
+.countdown{
+  display:flex; gap:14px; flex-wrap:wrap;
+}
+.cd-box{
+  flex: 1 1 120px;
+  background: linear-gradient(135deg, rgba(255,140,66,.05), rgba(255,179,102,.05));
+  border:2px solid rgba(255,140,66,.12);
+  border-radius: 18px;
+  padding: 16px 12px;
+  text-align:center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+.cd-box:hover{
+  background: linear-gradient(135deg, rgba(255,140,66,.1), rgba(255,179,102,.1));
+  border-color: rgba(255,140,66,.25);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255,140,66,.15);
+}
+.cd-box span{
+  display:block;
+  font-size:32px;
+  font-weight:700;
+  color:var(--warm);
+  margin-bottom:4px;
+}
+.cd-box small{color:var(--muted); font-size:13px; font-weight:500}
+
+.btn-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:20px}
+.btn{
+  display:inline-block;
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  color:white;
+  background: linear-gradient(135deg, var(--warm), var(--warm2));
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight:600;
+  box-shadow: 0 15px 35px rgba(255,140,66,.28);
+  transition: all 0.3s ease;
+  font-size:15px;
+}
+.btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(255,140,66,.35);
+}
+.btn:active{
+  transform: translateY(-1px);
+}
+.btn.ghost{
+  background: transparent;
+  color: var(--warm);
+  border: 2px solid var(--warm);
+  box-shadow:none;
+}
+.btn.ghost:hover{
+  background: rgba(255,140,66,.08);
+  border-color: var(--warm-dark);
+}
+
+.unlock{margin: 16px 0 14px}
+.unlock-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
+input{
+  flex: 1 1 220px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,140,66,.1);
+  outline:none;
+  font-size: 15px;
+  background: rgba(255,140,66,.02);
+  color:var(--text);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+input::placeholder{color: rgba(139,115,85,.5)}
+input:focus{
+  border-color: var(--warm);
+  background: rgba(255,140,66,.05);
+  box-shadow: 0 0 0 3px rgba(255,140,66,.1);
+}
+
+.letter{
+  margin-top: 14px;
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255,140,66,.03), rgba(255,179,102,.03));
+  border: 2px solid rgba(255,140,66,.1);
+  line-height:1.8;
+  font-size:15.5px;
+}
+.sign{margin-top:10px; font-weight:600}
+
+.locked{
+  /* locked content now heavily blurred */
+  filter: blur(12px);
+  opacity:.5;
+  user-select:none;
+  pointer-events:none;
+}
+
+.unlocked{
+  filter: none;
+  opacity: 1;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+.status{
+  margin: 12px 0 0;
+  font-weight:600;
+  font-size:14px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn{
+  from{opacity:0; transform: translateY(-8px)}
+  to{opacity:1; transform: translateY(0)}
+}
+
+.game{margin-top:12px}
+.score{
+  font-weight:700;
+  margin-bottom:14px;
+  font-size:16px;
+  color:var(--warm);
+}
+.playground{
+  position:relative;
+  height: 280px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255,140,66,.05), rgba(255,179,102,.05));
+  border: 2px solid rgba(255,140,66,.12);
+  overflow:hidden;
+  transition: all 0.3s ease;
+}
+.heart{
+  position:absolute;
+  font-size: 28px;
+  cursor:pointer;
+  user-select:none;
+  transform: translate(-50%, -50%);
+  animation: pop .18s ease-out;
+}
+@keyframes pop{
+  from{transform: translate(-50%,-50%) scale(.85); opacity:.7}
+  to{transform: translate(-50%,-50%) scale(1); opacity:1}
+}
+
+.final{
+  margin-top:14px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 2px solid rgba(255,140,66,.1);
+  background: linear-gradient(135deg, rgba(255,140,66,.03), rgba(255,179,102,.03));
+}
+
+.footer{padding: 10px 0 40px; text-align:center}
+.hint{margin:10px 0 0}
+
+.videos-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.video-item{
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(255,140,66,.08), rgba(255,179,102,.08));
+  border: 2px solid rgba(255,140,66,.1);
+  transition: all 0.3s ease;
+  padding: 12px;
+}
+
+.video-item:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(255,140,66,.2);
+  border-color: rgba(255,140,66,.2);
+}
+
+.video-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-container iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* custom frames for the video page */
+.video-frame {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  border: 4px dashed hotpink;
+  border-radius: 16px;
+  padding: 16px;
+  background: rgba(255,240,245,0.8);
+  position: relative;
+}
+.video-frame::before,
+.video-frame::after {
+  position: absolute;
+  font-size: 24px;
+}
+.video-frame::before {
+  content: "🌸💕";
+  top: -12px;
+  left: -12px;
+}
+.video-frame::after {
+  content: "💕🌸";
+  bottom: -12px;
+  right: -12px;
+}
+
+.frame-note, .frame-photo, .frame-video {
+  border: 2px solid rgba(255,140,66,.1);
+  border-radius: 12px;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(255,140,66,.03), rgba(255,179,102,.03));
+}
+.frame-note {
+  flex: 1 1 250px;
+}
+.frame-note textarea {
+  width: 100%;
+  height: 100px;
+  border: none;
+  background: transparent;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 15px;
+}
+.frame-video {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.frame-video video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.frame-video textarea,
+.frame-photo textarea {
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+  background: rgba(255,255,255,.3);
+  border-radius: 6px;
+  padding: 6px;
+  font-family: inherit;
+  /* allow user to resize in both directions */
+  resize: both;
+  min-height: 40px;
+}
+.frame-photo {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.frame-photo img {
+  max-width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.frame-label {
+  margin-top: 8px;
+  padding: 6px;
+  background: rgba(255,255,255,.3);
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  /* prevent selection/resizing */
+  user-select: none;
+  resize: none;
+}
+
+.video-title{
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--warm);
+  text-align: center;
+}
+
+/* Floating Background Elements */
+.float-bg{
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.float1{
+  top: 10%;
+  left: 5%;
+  font-size: 60px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.float2{
+  top: 20%;
+  right: 8%;
+  font-size: 50px;
+  animation: float 8s ease-in-out infinite 1s;
+}
+
+.float3{
+  top: 50%;
+  left: 10%;
+  font-size: 55px;
+  animation: float 7s ease-in-out infinite 0.5s;
+}
+
+.float4{
+  top: 65%;
+  right: 12%;
+  font-size: 45px;
+  animation: float 9s ease-in-out infinite 1.5s;
+}
+
+.float5{
+  bottom: 15%;
+  left: 20%;
+  font-size: 50px;
+  animation: float 7.5s ease-in-out infinite 0.8s;
+}
+
+.float6{
+  bottom: 25%;
+  right: 5%;
+  font-size: 55px;
+  animation: float 8.5s ease-in-out infinite 1.2s;
+}
+
+.float7{
+  top: 35%;
+  right: 25%;
+  font-size: 48px;
+  animation: float 6.5s ease-in-out infinite 0.3s;
+}
+
+.float8{
+  bottom: 40%;
+  left: 15%;
+  font-size: 52px;
+  animation: float 7.8s ease-in-out infinite 1.1s;
+}
+
+@keyframes float{
+  0%, 100%{
+    transform: translateY(0px) rotate(0deg);
+  }
+  25%{
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50%{
+    transform: translateY(-40px) rotate(-5deg);
+  }
+  75%{
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes sway{
+  0%, 100%{
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(15px);
+  }
+}
+
+.back-btn{
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(255,140,66,.1);
+}
+.coupon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.coupon {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.coupon:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 0 15px 30px rgba(255, 100, 150, 0.25);
+}
+.btn.ghost{
+  background: transparent;
+  color: var(--warm);
+  border: 2px solid var(--warm);
+  box-shadow:none;
+}
+.btn.ghost:hover{
+  background: rgba(255,140,66,.08);
+  border-color: var(--warm-dark);
+}
+ .memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.memory img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.memory:hover img {
+  transform: scale(1.05);
+}
+.memory{
+  position:relative;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.memory::after{
+  content:"❤️";
+  position:absolute;
+  top:15px;
+  right:15px;
+  font-size:22px;
+  opacity:0;
+  transition:0.4s;
+}
+
+.memory:hover::after{
+  opacity:1;
+  transform: scale(1.2);
+}
+
+.memory:hover{
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(255,140,66,.25);
+}
+/* Floating Hearts */
+
+.float-heart{
+  position: fixed;
+  font-size: 40px;
+  pointer-events:none;
+  opacity: 0.5;
+  z-index:0;
+  animation: floatHeart 8s ease-in-out infinite;
+}
+
+.heart1{ top:15%; left:20%; animation-delay:1s; }
+.heart2{ top:60%; right:15%; animation-delay:2.5s; }
+.heart3{ bottom:20%; left:35%; animation-delay:0.8s; }
+.heart4{ top:35%; right:40%; animation-delay:3s; }
+
+@keyframes floatHeart{
+  0%,100%{
+    transform: translateY(0px) scale(1);
+  }
+  50%{
+    transform: translateY(-35px) scale(1.15);
+  }
+}
+/* Make ghost buttons same as normal buttons */
+.btn.ghost{
+  background: linear-gradient(135deg, var(--warm), var(--warm2));
+  color: white;
+  border: none;
+  box-shadow: 0 15px 35px rgba(255,140,66,.28);
+}
+
+.btn.ghost:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(255,140,66,.35);
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>goy ym 💿</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+
+  <!-- Floating elements -->
+  <div class="float-bg float1">🌻</div>
+  <div class="float-bg float2">🌼</div>
+  <div class="float-bg float3">🌸</div>
+  <div class="float-bg float4">🌷</div>
+  <div class="float-bg float5">🌺</div>
+  <div class="float-bg float6">🌻</div>
+  <div class="float-bg float7">🌼</div>
+  <div class="float-bg float8">🌷</div>
+  <div class="float-heart heart1">❤️</div>
+  <div class="float-heart heart2">💖</div>
+  <div class="float-heart heart3">💕</div>
+  <div class="float-heart heart4">💗</div>
+
+  <main class="container">
+    <section class="section">
+      <div class="card" style="text-align:center">
+        <h2>🎬 goy ym</h2>
+        <p class="muted">alishu za</p>
+
+        <!-- unlock area -->
+        <div class="unlock" style="margin-top:10px">
+          <label for="videoPass">2025 ond hamgiin suuld hezee uulzlaa sar odortoin :</label>
+          <div class="unlock-row">
+            <input id="videoPass" type="password" placeholder="энд бич…" autocomplete="off">
+            <button class="btn" id="videoUnlockBtn">Unlock</button>
+          </div>
+          <p class="tiny muted">Hint: sar odor l bga 2025 </p>
+        </div>
+
+        <p class="status" id="videoStatus"></p>
+
+        <div class="locked" id="videoBox">
+          <!-- frame around video and photo with bottom text boxes -->
+          <div class="video-frame">
+            <div class="frame-video">
+              <video controls style="border-radius:8px;">
+                <source src="videos/myvideo.mp4" type="video/mp4">
+                Таны браузер видео-г дэмждэггүй байна.
+              </video>
+              <div class="frame-label">ene videond cn cms iluu hairtai edr hahah xD</div>
+            </div>
+            <div class="frame-photo">
+              <img src="videos/photo.jpg" alt="photo placeholder">
+              <div class="frame-label">ene zurgiig cn haraal dhial hahahah unheer hoorhn zurag tehu yoooooooo</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:30px">
+        <a href="index.html" class="btn">← Буцах</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="tiny muted">Made with 🌻 for 3.8</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
